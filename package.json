@@ -10,9 +10,10 @@
   ],
   "scripts": {
     "_test": "npm run test:lint && test:tape",
+    "cover": "nyc npm run test:tape",
     "doc": "NODE_ENV=test jsdoc2md -t ./lib/README_tpl.hbs --src ./lib/*.js  >| README.md",
     "preversion": "npm run doc && sortpack && npm t",
-    "test": "npm run test:tape",
+    "test": "npm run cover",
     "test:lint": "eslint -c .eslintrc.json lib/**/*.js test/**/*.js",
     "test:tape": "NODE_ENV=test mocha test/**/*.js"
   },
@@ -49,11 +50,24 @@
     "expect.js": "0.3.1",
     "koa": "2.7.0",
     "mocha": "2.0.1",
+    "nyc": "13.2.0",
     "should": "6.0.3",
     "sortpack": "1.1.2",
     "supertest": "3.4.2"
   },
   "engines": {
     "node": ">=8.0.0"
+  },
+  "nyc": {
+    "include": [
+      "lib/index.js"
+    ],
+    "instrument": true,
+    "reporter": [
+      "text",
+      "html",
+      "json"
+    ],
+    "sourceMap": true
   }
 }
