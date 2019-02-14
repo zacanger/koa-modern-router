@@ -1,10 +1,8 @@
 # koa-modern-router
 
-[![NPM version](https://img.shields.io/npm/v/koa-modern-router.svg?style=flat)](https://npmjs.org/package/koa-modern-router) 
+[![NPM version](https://img.shields.io/npm/v/koa-modern-router.svg?style=flat)](https://npmjs.org/package/koa-modern-router) [![NPM Downloads](https://img.shields.io/npm/dm/koa-modern-router.svg?style=flat)](https://npmjs.org/package/koa-modern-router)
 
 > Router middleware for [koa](https://github.com/koajs/koa)
-
-`koa-modern-router` with modernized codebase, maintained by someone who uses Koa every day.
 
 * Express-style routing using `app.get`, `app.put`, `app.post`, etc.
 * Named URL parameters.
@@ -16,7 +14,11 @@
 * Nestable routers.
 * ES7 async/await support.
 
+
+
 ## Installation
+
+Install using [npm](https://www.npmjs.org/):
 
 ```sh
 npm i koa-modern-router
@@ -39,6 +41,8 @@ npm i koa-modern-router
             * [.param(param, middleware)](#module_koa-modern-router--Router+param) ⇒ <code>Router</code>
         * _static_
             * [.url(path, params)](#module_koa-modern-router--Router.url) ⇒ <code>String</code>
+        * _inner_
+            * [~sortByMostSpecificLayer(a, b)](#module_koa-modern-router--Router..sortByMostSpecificLayer)
 
 <a name="exp_module_koa-modern-router--Router"></a>
 
@@ -59,24 +63,23 @@ Create a new router.
 Basic usage:
 
 ```javascript
-import Koa from 'koa'
-import Router from 'koa-modern-router'
+var Koa = require('koa');
+var Router = require('koa-modern-router');
 
-const app = new Koa()
-const router = new Router()
+var app = new Koa();
+var router = new Router();
 
 router.get('/', (ctx, next) => {
   // ctx.router available
-})
+});
 
 app
   .use(router.routes())
-  .use(router.allowedMethods())
+  .use(router.allowedMethods());
 ```
 <a name="module_koa-modern-router--Router+get|put|post|patch|delete|del"></a>
 
 #### router.get|put|post|patch|delete|del ⇒ <code>Router</code>
-
 Create `router.verb()` methods, where *verb* is one of the HTTP verbs such
 as `router.get()` or `router.post()`.
 
@@ -101,7 +104,7 @@ router
   })
   .all('/users/:id', (ctx, next) => {
     // ...
-  })
+  });
 ```
 
 When a route is matched, its path is available at `ctx._matchedRoute` and if named,
@@ -151,15 +154,15 @@ router.get(
 Nesting routers is supported:
 
 ```javascript
-const forums = new Router()
-var posts = new Router()
+var forums = new Router();
+var posts = new Router();
 
-posts.get('/', (ctx, next) => {...})
-posts.get('/:pid', (ctx, next) => {...})
-forums.use('/forums/:fid/posts', posts.routes(), posts.allowedMethods())
+posts.get('/', (ctx, next) => {...});
+posts.get('/:pid', (ctx, next) => {...});
+forums.use('/forums/:fid/posts', posts.routes(), posts.allowedMethods());
 
 // responds to "/forums/123/posts" and "/forums/123/posts/123"
-app.use(forums.routes())
+app.use(forums.routes());
 ```
 
 #### Router prefixes
@@ -167,12 +170,12 @@ app.use(forums.routes())
 Route paths can be prefixed at the router level:
 
 ```javascript
-const router = new Router({
+var router = new Router({
   prefix: '/users'
-})
+});
 
-router.get('/', ...) // responds to "/users"
-router.get('/:id', ...) // responds to "/users/:id"
+router.get('/', ...); // responds to "/users"
+router.get('/:id', ...); // responds to "/users/:id"
 ```
 
 #### URL parameters
@@ -181,9 +184,9 @@ Named route parameters are captured and added to `ctx.params`.
 
 ```javascript
 router.get('/:category/:title', (ctx, next) => {
-  console.log(ctx.params)
+  console.log(ctx.params);
   // => { category: 'programming', title: 'how-to-node' }
-})
+});
 ```
 
 The [path-to-regexp](https://github.com/pillarjs/path-to-regexp) module is
@@ -225,13 +228,13 @@ sequentially, requests start at the first middleware and work their way
 // session middleware will run before authorize
 router
   .use(session())
-  .use(authorize())
+  .use(authorize());
 
 // use middleware only with given path
-router.use('/users', userAuth())
+router.use('/users', userAuth());
 
 // or with an array of paths
-router.use(['/users', '/admin'], userAuth())
+router.use(['/users', '/admin'], userAuth());
 
 app.use(router.routes());
 ```
@@ -281,19 +284,19 @@ app.use(router.allowedMethods());
 **Example with [Boom](https://github.com/hapijs/boom)**
 
 ```javascript
-import Koa from 'koa'
-import Router from 'koa-modern-router'
-import boom from 'boom'
+var Koa = require('koa');
+var Router = require('koa-modern-router');
+var Boom = require('boom');
 
-const app = new Koa()
-const router = new Router()
+var app = new Koa();
+var router = new Router();
 
-app.use(router.routes())
+app.use(router.routes());
 app.use(router.allowedMethods({
   throw: true,
   notImplemented: () => new Boom.notImplemented(),
   methodNotAllowed: () => new Boom.methodNotAllowed()
-}))
+}));
 ```
 <a name="module_koa-modern-router--Router+redirect"></a>
 
@@ -303,16 +306,16 @@ Redirect `source` to `destination` URL with optional 30x status `code`.
 Both `source` and `destination` can be route names.
 
 ```javascript
-router.redirect('/login', 'sign-in')
+router.redirect('/login', 'sign-in');
 ```
 
 This is equivalent to:
 
 ```javascript
 router.all('/login', ctx => {
-  ctx.redirect('/sign-in')
-  ctx.status = 301
-})
+  ctx.redirect('/sign-in');
+  ctx.status = 301;
+});
 ```
 
 **Kind**: instance method of <code>[Router](#exp_module_koa-modern-router--Router)</code>  
@@ -352,7 +355,7 @@ Generate URL for route. Takes a route name and map of named `params`.
 ```javascript
 router.get('user', '/users/:id', (ctx, next) => {
   // ...
-})
+});
 
 router.url('user', 3);
 // => "/users/3"
@@ -405,7 +408,7 @@ router
 ```
 <a name="module_koa-modern-router--Router.url"></a>
 
-#### Router.url(path, params [, options]) ⇒ <code>String</code>
+#### Router.url(path, params) ⇒ <code>String</code>
 Generate URL from url pattern and given `params`.
 
 **Kind**: static method of <code>[Router](#exp_module_koa-modern-router--Router)</code>  
@@ -414,14 +417,29 @@ Generate URL from url pattern and given `params`.
 | --- | --- | --- |
 | path | <code>String</code> | url pattern |
 | params | <code>Object</code> | url parameters |
-| [options] | <code>Object</code> | options parameter |
-| [options.query] | <code>Object</code> &#124; <code>String</code> | query options |
 
 **Example**  
 ```javascript
 var url = Router.url('/users/:id', {id: 1});
 // => "/users/1"
-
-const url = Router.url('/users/:id', {id: 1}, {query: { active: true }});
-// => "/users/1?active=true"
 ```
+<a name="module_koa-modern-router--Router..sortByMostSpecificLayer"></a>
+
+#### Router~sortByMostSpecificLayer(a, b)
+Sort function for array of Layers. Will sort the layers with least specific first
+and most specific last
+
+**Kind**: inner method of <code>[Router](#exp_module_koa-modern-router--Router)</code>  
+
+| Param | Type |
+| --- | --- |
+| a | <code>Layer</code> | 
+| b | <code>Layer</code> | 
+
+## Contributing
+
+Please submit all issues and pull requests to the [zacanger/koa-modern-router](http://github.com/zacanger/koa-modern-router) repository. See [CONTRIBUTING.md](./.github/CONTRIBUTING.md) for details.
+
+## License
+
+[MIT](./LICENSE.md)
