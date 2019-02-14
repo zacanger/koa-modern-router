@@ -1,5 +1,5 @@
 {
-  "name": "koa-router",
+  "name": "koa-modern-router",
   "description": "Router middleware for koa. Provides RESTful resource routing.",
   "repository": {
     "type": "git",
