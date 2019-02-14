@@ -4,6 +4,11 @@
 
 Simple and modern router middleware for Koa [koa](https://github.com/koajs/koa), maintained by someone who relies on Koa every day.
 
+## IMPORTANT
+
+It is not my goal to simply maintain koa-router under a new name. There may be breaking changes in the future. If you just want to keep using koa-router safely, you should `npm i koa-router@7.4.0` and always use `npm ci` and
+`save-exact=true` in your `.npmrc`.`
+
 * Express-style routing using `app.get`, `app.put`, `app.post`, etc.
 * Named URL parameters.
 * Named routes with URL generation.
