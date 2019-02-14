@@ -1,5 +1,13 @@
 # History
 
+## 8.1.0
+
+* Applied a collection of patches from PRs on koa-router
+
+## 8.0.0
+
+* Forked to zacanger/koa-modern router
+
 ## 7.4.0
 
 - Fix router.url() for multiple nested routers [#407](https://github.com/alexmingoia/koa-router/pull/407)
