@@ -826,7 +826,7 @@ describe('Router', function () {
       });
     });
 
-    it('registers route with with a given name and regexp path', function () {
+    it('registers route with a given name and regexp path', function () {
       var router = new Router();
       methods.forEach(function (method) {
         router[method](method, /^\/$/i, function () {}).should.equal(router);
