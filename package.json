@@ -9,6 +9,7 @@
     "lib"
   ],
   "scripts": {
+    "preversion": "npm t",
     "test": "NODE_ENV=test mocha test/**/*.js"
   },
   "repository": {
