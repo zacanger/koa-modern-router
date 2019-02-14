@@ -49,9 +49,9 @@
     "eslint-plugin-unicorn": "7.1.0",
     "expect.js": "0.3.1",
     "koa": "2.7.0",
-    "mocha": "2.0.1",
+    "mocha": "5.2.0",
     "nyc": "13.2.0",
-    "should": "6.0.3",
+    "should": "13.2.3",
     "sortpack": "1.1.2",
     "supertest": "3.4.2"
   },
