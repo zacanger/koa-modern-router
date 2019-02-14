@@ -60,7 +60,7 @@
   },
   "nyc": {
     "include": [
-      "lib/index.js"
+      "lib/*.js"
     ],
     "instrument": true,
     "reporter": [
