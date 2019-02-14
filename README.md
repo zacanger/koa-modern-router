@@ -1,6 +1,7 @@
 # koa-modern-router
 
-[![npm version](https://img.shields.io/npm/v/koa-modern-router.svg?style=flat)](https://npmjs.org/package/koa-modern-router) [![CircleCI](https://circleci.com/gh/zacanger/koa-modern-router.svg?style=svg)](https://circleci.com/gh/zacanger/koa-modern-router)
+[![npm version](https://img.shields.io/npm/v/koa-modern-router.svg?style=flat)](https://npmjs.org/package/koa-modern-router) [![CircleCI](https://circleci.com/gh/zacanger/koa-modern-router.svg?style=svg)](https://circleci.com/gh/zacanger/koa-modern-router) [![Maintainability](https://api.codeclimate.com/v1/badges/829c8a19da29cb7999be/maintainability)](https://codeclimate.com/github/zacanger/koa-modern-router/maintainability) [![codecov](https://codecov.io/gh/zacanger/koa-modern-router/branch/master/graph/badge.svg)](https://codecov.io/gh/zacanger/koa-modern-router)
+
 
 Simple and modern router middleware for Koa [koa](https://github.com/koajs/koa), maintained by someone who relies on Koa every day.
 
