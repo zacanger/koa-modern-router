@@ -3,13 +3,13 @@
 ## 8.1.0
 
 - Applied a collection of patches from PRs on koa-router:
-  - https://github.com/ZijianHe/koa-router/pull/377
-  - https://github.com/ZijianHe/koa-router/pull/479
-  - https://github.com/ZijianHe/koa-router/pull/484
-  - https://github.com/ZijianHe/koa-router/pull/480
-  - https://github.com/ZijianHe/koa-router/pull/475
-  - https://github.com/ZijianHe/koa-router/pull/493
-  - https://github.com/ZijianHe/koa-router/pull/490
+  - <https://github.com/ZijianHe/koa-router/pull/377>
+  - <https://github.com/ZijianHe/koa-router/pull/479>
+  - <https://github.com/ZijianHe/koa-router/pull/484>
+  - <https://github.com/ZijianHe/koa-router/pull/480>
+  - <https://github.com/ZijianHe/koa-router/pull/475>
+  - <https://github.com/ZijianHe/koa-router/pull/493>
+  - <https://github.com/ZijianHe/koa-router/pull/490>
 
 ## 8.0.0
 
