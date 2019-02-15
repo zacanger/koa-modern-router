@@ -3,13 +3,14 @@
 const fs = require('fs')
 const http = require('http')
 const Koa = require('koa')
-const methods = require('methods')
 const path = require('path')
 const request = require('supertest')
 const Router = require('../../lib/router')
 const Layer = require('../../lib/layer')
 const expect = require('expect.js')
 const should = require('should')
+
+const methods = http.METHODS.map((m) => m.toLowerCase())
 
 describe('Router', () => {
   it('creates new router with koa app', (done) => {
