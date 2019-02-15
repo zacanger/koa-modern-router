@@ -3,6 +3,7 @@
     "it": false,
     "describe": false,
     "beforeEach": false,
+    "before": false,
     "after": false
   }
 }
