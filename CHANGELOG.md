@@ -1,5 +1,10 @@
 # History
 
+## 8.3.0
+
+- Lots of code cleanup
+- Add linting
+
 ## 8.1.0
 
 - Applied a collection of patches from PRs on koa-router:
