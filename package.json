@@ -1,7 +1,7 @@
 {
   "name": "koa-modern-router",
   "description": "Router middleware for koa. Provides RESTful resource routing.",
-  "version": "8.2.7",
+  "version": "8.3.0",
   "author": "Alex Mingoia <talk@alexmingoia.com>",
   "license": "MIT",
   "main": "lib/router.js",
