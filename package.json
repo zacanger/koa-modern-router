@@ -9,11 +9,10 @@
     "lib"
   ],
   "scripts": {
-    "_test": "npm run test:lint && test:tape",
     "cover": "nyc npm run test:tape",
     "doc": "NODE_ENV=test jsdoc2md -t ./lib/README_tpl.hbs --src ./lib/*.js  >| README.md",
     "preversion": "npm run doc && sortpack && npm t",
-    "test": "npm run cover",
+    "test": "npm run test:lint && npm run cover",
     "test:lint": "eslint -c .eslintrc.json lib/**/*.js test/**/*.js",
     "test:tape": "NODE_ENV=test mocha test/**/*.js"
   },
