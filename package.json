@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "cover": "nyc npm run test:tape",
-    "doc": "NODE_ENV=test jsdoc2md -t ./lib/README_tpl.hbs --src ./lib/*.js  >| README.md",
+    "doc": "NODE_ENV=test jsdoc2md -t ./lib/README_tpl.hbs --files ./lib/*.js  >| README.md",
     "preversion": "npm run doc && sortpack && npm t",
     "test": "npm run test:lint && npm run cover",
     "test:lint": "eslint -c .eslintrc.json lib/**/*.js test/**/*.js",
@@ -31,7 +31,7 @@
   ],
   "dependencies": {
     "http-errors": "1.7.1",
-    "jsdoc-to-markdown": "1.1.1",
+    "jsdoc-to-markdown": "4.0.1",
     "koa-compose": "4.1.0",
     "methods": "1.1.2",
     "path-to-regexp": "1.1.1",

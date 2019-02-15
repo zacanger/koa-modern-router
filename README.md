@@ -41,8 +41,8 @@ npm i koa-modern-router
             * [.prefix(prefix)](#module_koa-modern-router--Router+prefix) ⇒ <code>Router</code>
             * [.allowedMethods([options])](#module_koa-modern-router--Router+allowedMethods) ⇒ <code>function</code>
             * [.redirect(source, destination, [code])](#module_koa-modern-router--Router+redirect) ⇒ <code>Router</code>
-            * [.route(name)](#module_koa-modern-router--Router+route) ⇒ <code>Layer</code> &#124; <code>false</code>
-            * [.url(name, params, [options])](#module_koa-modern-router--Router+url) ⇒ <code>String</code> &#124; <code>Error</code>
+            * [.route(name)](#module_koa-modern-router--Router+route) ⇒ <code>Layer</code> \| <code>false</code>
+            * [.url(name, params, [options])](#module_koa-modern-router--Router+url) ⇒ <code>String</code> \| <code>Error</code>
             * [.param(param, middleware)](#module_koa-modern-router--Router+param) ⇒ <code>Router</code>
         * _static_
             * [.url(path, params)](#module_koa-modern-router--Router.url) ⇒ <code>String</code>
@@ -84,7 +84,7 @@ app
 ```
 <a name="module_koa-modern-router--Router+get|put|post|patch|delete|del"></a>
 
-#### router.get|put|post|patch|delete|del ⇒ <code>Router</code>
+#### router.get\|put\|post\|patch\|delete\|del ⇒ <code>Router</code>
 Create `router.verb()` methods, where *verb* is one of the HTTP verbs such
 as `router.get()` or `router.post()`.
 
@@ -197,7 +197,7 @@ router.get('/:category/:title', (ctx, next) => {
 The [path-to-regexp](https://github.com/pillarjs/path-to-regexp) module is
 used to convert paths to regular expressions.
 
-**Kind**: instance property of <code>[Router](#exp_module_koa-modern-router--Router)</code>  
+**Kind**: instance property of [<code>Router</code>](#exp_module_koa-modern-router--Router)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -210,7 +210,7 @@ used to convert paths to regular expressions.
 #### router.routes ⇒ <code>function</code>
 Returns router middleware which dispatches a route matching the request.
 
-**Kind**: instance property of <code>[Router](#exp_module_koa-modern-router--Router)</code>  
+**Kind**: instance property of [<code>Router</code>](#exp_module_koa-modern-router--Router)  
 <a name="module_koa-modern-router--Router+use"></a>
 
 #### router.use([path], middleware) ⇒ <code>Router</code>
@@ -220,7 +220,7 @@ Middleware run in the order they are defined by `.use()`. They are invoked
 sequentially, requests start at the first middleware and work their way
 "down" the middleware stack.
 
-**Kind**: instance method of <code>[Router](#exp_module_koa-modern-router--Router)</code>  
+**Kind**: instance method of [<code>Router</code>](#exp_module_koa-modern-router--Router)  
 
 | Param | Type |
 | --- | --- |
@@ -248,7 +248,7 @@ app.use(router.routes())
 #### router.prefix(prefix) ⇒ <code>Router</code>
 Set the path prefix for a Router instance that was already initialized.
 
-**Kind**: instance method of <code>[Router](#exp_module_koa-modern-router--Router)</code>  
+**Kind**: instance method of [<code>Router</code>](#exp_module_koa-modern-router--Router)  
 
 | Param | Type |
 | --- | --- |
@@ -265,7 +265,7 @@ Returns separate middleware for responding to `OPTIONS` requests with
 an `Allow` header containing the allowed methods, as well as responding
 with `405 Method Not Allowed` and `501 Not Implemented` as appropriate.
 
-**Kind**: instance method of <code>[Router](#exp_module_koa-modern-router--Router)</code>  
+**Kind**: instance method of [<code>Router</code>](#exp_module_koa-modern-router--Router)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -323,7 +323,7 @@ router.all('/login', (ctx) => {
 })
 ```
 
-**Kind**: instance method of <code>[Router](#exp_module_koa-modern-router--Router)</code>  
+**Kind**: instance method of [<code>Router</code>](#exp_module_koa-modern-router--Router)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -333,10 +333,10 @@ router.all('/login', (ctx) => {
 
 <a name="module_koa-modern-router--Router+route"></a>
 
-#### router.route(name) ⇒ <code>Layer</code> &#124; <code>false</code>
+#### router.route(name) ⇒ <code>Layer</code> \| <code>false</code>
 Lookup route with given `name`.
 
-**Kind**: instance method of <code>[Router](#exp_module_koa-modern-router--Router)</code>  
+**Kind**: instance method of [<code>Router</code>](#exp_module_koa-modern-router--Router)  
 
 | Param | Type |
 | --- | --- |
@@ -344,17 +344,17 @@ Lookup route with given `name`.
 
 <a name="module_koa-modern-router--Router+url"></a>
 
-#### router.url(name, params, [options]) ⇒ <code>String</code> &#124; <code>Error</code>
+#### router.url(name, params, [options]) ⇒ <code>String</code> \| <code>Error</code>
 Generate URL for route. Takes a route name and map of named `params`.
 
-**Kind**: instance method of <code>[Router](#exp_module_koa-modern-router--Router)</code>  
+**Kind**: instance method of [<code>Router</code>](#exp_module_koa-modern-router--Router)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | name | <code>String</code> | route name |
 | params | <code>Object</code> | url parameters |
 | [options] | <code>Object</code> | options parameter |
-| [options.query] | <code>Object</code> &#124; <code>String</code> | query options |
+| [options.query] | <code>Object</code> \| <code>String</code> | query options |
 
 **Example**  
 ```javascript
@@ -385,7 +385,7 @@ router.url('user', { id: 3 }, { query: "limit=1" })
 Run middleware for named route parameters. Useful for auto-loading or
 validation.
 
-**Kind**: instance method of <code>[Router](#exp_module_koa-modern-router--Router)</code>  
+**Kind**: instance method of [<code>Router</code>](#exp_module_koa-modern-router--Router)  
 
 | Param | Type |
 | --- | --- |
@@ -416,7 +416,7 @@ router
 #### Router.url(path, params) ⇒ <code>String</code>
 Generate URL from url pattern and given `params`.
 
-**Kind**: static method of <code>[Router](#exp_module_koa-modern-router--Router)</code>  
+**Kind**: static method of [<code>Router</code>](#exp_module_koa-modern-router--Router)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -434,7 +434,7 @@ const url = Router.url('/users/:id', { id: 1 })
 Sort function for array of Layers. Will sort the layers with least specific first
 and most specific last
 
-**Kind**: inner method of <code>[Router](#exp_module_koa-modern-router--Router)</code>  
+**Kind**: inner method of [<code>Router</code>](#exp_module_koa-modern-router--Router)  
 
 | Param | Type |
 | --- | --- |
