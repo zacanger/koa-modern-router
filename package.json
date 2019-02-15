@@ -33,6 +33,7 @@
     "http-errors": "1.7.1",
     "jsdoc-to-markdown": "1.1.1",
     "koa-compose": "4.1.0",
+    "methods": "1.1.2",
     "path-to-regexp": "1.1.1",
     "urijs": "1.19.1"
   },
