@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "cover": "nyc npm run test:tape",
-    "doc": "NODE_ENV=test jsdoc2md -t ./lib/README_tpl.hbs --files ./lib/*.js  >| README.md",
+    "doc": "NODE_ENV=test jsdoc2md -t ./lib/README_template.md --files ./lib/*.js  >| README.md",
     "preversion": "npm run doc && sortpack && npm t",
     "test": "npm run test:lint && npm run cover",
     "test:lint": "eslint -c .eslintrc.json lib/**/*.js test/**/*.js",
