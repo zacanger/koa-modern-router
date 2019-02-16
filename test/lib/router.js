@@ -1494,6 +1494,61 @@ describe('Router', () => {
         })
     })
 
+    it('places the longest match which is a subrouter route for `_matchedRoute` value on context', (done) => {
+      const app = new Koa()
+      const subrouter = Router()
+        .get('/sub', (ctx) => {
+          ctx.body.route1 = ctx._matchedRoute
+        })
+      const router = Router()
+        .prefix('/prefix')
+        .use((ctx, next) => {
+          ctx.body = {}
+          ctx.body.route2 = ctx._matchedRoute
+          return next()
+        })
+        .use('/parent', subrouter.routes(), subrouter.allowedMethods())
+
+      request(http.createServer(app.use(router.routes()).callback()))
+        .get('/prefix/parent/sub')
+        .expect(200)
+        .end((err, res) => {
+          if (err) return done(err)
+          expect(res.body).to.have.property('route1', '/prefix/parent/sub')
+          expect(res.body).to.have.property('route2', '/prefix/parent/sub')
+          done()
+        })
+    })
+
+    // eslint-disable-next-line
+    xit('uses the longest match for `_matchedRoute` value on context', (done) => {
+      const app = new Koa()
+      const router = new Router()
+
+      router.get('/users/:id', (ctx, next) => {
+        ctx.body = { route1: ctx._matchedRoute }
+        should.exist(ctx.params.id)
+        ctx.status = 200
+        return next()
+      })
+
+      // Matches (.*) so it will require a tie breaker
+      router.use((ctx, next) => {
+        ctx.body.route2 = ctx._matchedRoute
+        return next()
+      })
+
+      request(http.createServer(app.use(router.routes()).callback()))
+        .get('/users/1')
+        .expect(200)
+        .end((err, res) => {
+          if (err) return done(err)
+          expect(res.body).to.have.property('route1', '/users/:id')
+          expect(res.body).to.have.property('route2', '/users/:id')
+          done()
+        })
+    })
+
     it('places a `_matchedRouteName` value on the context for a named route', (done) => {
       const app = new Koa()
       const router = new Router()

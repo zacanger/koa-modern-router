@@ -7,7 +7,7 @@ const Router = require('../../lib/router')
 const Layer = require('../../lib/layer')
 
 describe('Layer', () => {
-  it('composes multiple callbacks/middlware', (done) => {
+  it('composes multiple callbacks/middleware', (done) => {
     const app = new Koa()
     const router = new Router()
     app.use(router.routes())
@@ -31,7 +31,7 @@ describe('Layer', () => {
       })
   })
 
-  describe('Layer#match()', () => {
+  describe('Layer#matchLength()', () => {
     it('captures URL path parameters', (done) => {
       const app = new Koa()
       const router = new Router()
