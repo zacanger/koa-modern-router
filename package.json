@@ -31,7 +31,6 @@
   ],
   "dependencies": {
     "http-errors": "1.7.2",
-    "jsdoc-to-markdown": "4.0.1",
     "koa-compose": "4.1.0",
     "methods": "1.1.2",
     "path-to-regexp": "1.1.1",
@@ -47,6 +46,7 @@
     "eslint-plugin-promise": "4.0.1",
     "eslint-plugin-unicorn": "7.1.0",
     "expect.js": "0.3.1",
+    "jsdoc-to-markdown": "4.0.1",
     "koa": "2.7.0",
     "mocha": "6.0.1",
     "nyc": "13.3.0",
