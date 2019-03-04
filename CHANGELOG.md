@@ -1,5 +1,9 @@
 # History
 
+## 9.0.3
+
+Move `jsdoc-to-markdown` to devDependencies - @MarkHerhold
+
 ## 9.0.0
 
 Apply changes from <https://github.com/ZijianHe/koa-router/pull/492>
