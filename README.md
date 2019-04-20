@@ -442,6 +442,12 @@ and most specific last
 | a | <code>Layer</code> | 
 | b | <code>Layer</code> | 
 
+## Patreon Sponsors
+
+This project is sponsored on [Patreon](https://www.patreon.com/zacanger) by:
+
+* [Keeley Hammond](https://github.com/VerteDinde)
+
 ## Contributing
 
 Please submit all issues and pull requests to the [zacanger/koa-modern-router](http://github.com/zacanger/koa-modern-router) repository. See [CONTRIBUTING.md](./.github/CONTRIBUTING.md) for details.
