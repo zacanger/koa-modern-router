@@ -33,7 +33,7 @@
     "http-errors": "1.7.2",
     "koa-compose": "4.1.0",
     "methods": "1.1.2",
-    "path-to-regexp": "1.1.1",
+    "path-to-regexp": "1.7.0",
     "urijs": "1.19.1"
   },
   "devDependencies": {
@@ -51,7 +51,7 @@
     "mocha": "6.1.4",
     "nyc": "14.0.0",
     "should": "13.2.3",
-    "sortpack": "1.1.4",
+    "sortpack": "1.1.5",
     "supertest": "4.0.2"
   },
   "engines": {
