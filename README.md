@@ -1,6 +1,6 @@
 # koa-modern-router
 
-[![npm version](https://img.shields.io/npm/v/koa-modern-router.svg?style=flat)](https://npmjs.org/package/koa-modern-router) [![CircleCI](https://circleci.com/gh/zacanger/koa-modern-router.svg?style=svg)](https://circleci.com/gh/zacanger/koa-modern-router) [![Maintainability](https://api.codeclimate.com/v1/badges/829c8a19da29cb7999be/maintainability)](https://codeclimate.com/github/zacanger/koa-modern-router/maintainability) [![codecov](https://codecov.io/gh/zacanger/koa-modern-router/branch/master/graph/badge.svg)](https://codecov.io/gh/zacanger/koa-modern-router)
+[![npm version](https://img.shields.io/npm/v/koa-modern-router.svg?style=flat)](https://npmjs.org/package/koa-modern-router) [![CircleCI](https://circleci.com/gh/zacanger/koa-modern-router.svg?style=svg)](https://circleci.com/gh/zacanger/koa-modern-router) [![Maintainability](https://api.codeclimate.com/v1/badges/829c8a19da29cb7999be/maintainability)](https://codeclimate.com/github/zacanger/koa-modern-router/maintainability) [![codecov](https://codecov.io/gh/zacanger/koa-modern-router/branch/master/graph/badge.svg)](https://codecov.io/gh/zacanger/koa-modern-router) [![Patreon](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://www.patreon.com/zacanger)
 
 Simple and modern router middleware for [Koa](https://github.com/koajs/koa).
 Based on [koa-router](https://github.com/ZijianHe/koa-router).
@@ -444,11 +444,9 @@ and most specific last
 
 ## Patreon Sponsors
 
-[![Patreon](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://www.patreon.com/zacanger)
-
 This project is sponsored on [Patreon](https://www.patreon.com/zacanger) by:
 
-* [Keeley Hammond](https://github.com/VerteDinde)
+* Keeley Hammond
 
 ## Contributing
 
