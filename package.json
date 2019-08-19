@@ -1,6 +1,6 @@
 {
   "name": "koa-modern-router",
-  "description": "Router middleware for koa. Provides RESTful resource routing.",
+  "description": "DEPRECATED Router middleware for koa. Provides RESTful resource routing.",
   "version": "9.0.13",
   "author": "Zac Anger <zac@zacanger.com>",
   "license": "MIT",
